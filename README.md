@@ -19,12 +19,13 @@ example4 := [4]string{"Bob", "George", "Sarah", "Helen"}
 ### Notes
 - Slices act like arrays but can have variable lengths.
 - Slices don't actually store any data and acts like a reference, showing a *slice* of the underlying array.
+- When slicing, the lower bound is inclusive while the upper bound is exclusive.
 
 ### Declaration
 ```go
 someArray := [4]string{"This", "is", "an", "array"}
 
-someSlice := someArray[:2] // [This is]  -> a slice of an array
+someSlice1 := someArray[:2] // [This is]  -> a slice of an array [lowerbound : upperbound]
 
 someSlice2 := []string{"This", "is", "a", "slice", "literal"} // like an array but without a specified length
 
@@ -54,6 +55,37 @@ for i := 0; i < len(str); i++ {
 ```
 
 ## Struct
+### Define a new struct type
+```go
+type Person struct {
+  Name string
+  Age int
+  IsAdult bool
+} 
+```
+
+### Create a struct from the new struct type
+```go
+// Method 1
+person1 := Person{
+  Name: "Bob",
+  Age: 32,
+  IsAdult: true,
+}
+
+// Method 2
+person1 := Person{"Bob", 32, true} // All field values need filled and in the correct order unlike in Method 1
+
+// Method 3
+person1 := Person{}
+person1.Name = "Bob"
+person2.Age = 32
+person1.IsAdult = true
+
+// Method 4
+var person1 Person
+// Initalize and then set fields later like in Method 3
+```
 
 ## Resources
 - [A Tour of Go](https://go.dev/tour/list)

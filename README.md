@@ -111,6 +111,7 @@ value, exists := someMap2["key1"] // value = 3, exists = true
 ```
 
 ### Loop over a map
+Note: When looping over a map, the order in which the loop accesses the key/value pairs are random!
 ```go
 for key, value := range someMap2 {
 // ...

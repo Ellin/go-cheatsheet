@@ -50,7 +50,7 @@ for i, char := range str { // type of char is rune
 str := "This is a string!"
 
 for i := 0; i < len(str); i++ {
-\\ ...
+// ...
 }
 ```
 
@@ -79,12 +79,36 @@ person1 := Person{"Bob", 32, true} // All field values need filled and in the co
 // Method 3
 person1 := Person{}
 person1.Name = "Bob"
-person2.Age = 32
+person1.Age = 32
 person1.IsAdult = true
 
 // Method 4
 var person1 Person
 // Initalize and then set fields later like in Method 3
+```
+
+## Map
+### Declare & initialize
+```go
+someMap := make(map[int]string) // make(map[key type]value type)
+
+var someMap2 = map[string]int{
+  "key1" : 3,
+  "key2" : 0,
+  "key3" : 5,
+}
+```
+
+### Check if a key exists
+```go
+value, exists := someMap2["key1"] // value = 3, exists = true
+```
+
+### Loop over a map
+```go
+for key, value := range someMap2 {
+// ...
+}
 ```
 
 ## Resources

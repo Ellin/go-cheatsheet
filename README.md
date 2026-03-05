@@ -54,6 +54,12 @@ for i := 0; i < len(str); i++ {
 }
 ```
 
+### Convert string to a slice of runes
+```go
+someString := "✨Hello world"
+rSlice := []rune(someString) // rSlice[0] -> ✨
+```
+
 ## Struct
 ### Define a new struct type
 ```go
